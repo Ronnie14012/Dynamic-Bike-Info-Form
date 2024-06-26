@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: lemonchiffon;
+            
+        }
+        .d1{
+            background-color: grey;
+            margin: 0px 5px 5px 5px;
+            border: 1px solid blueviolet;
+            width: 200px;
+            float: left;
+            padding: 10px;
+            height: 300px;
+            
+        }
+        input{
+            margin:10px 0px 0px 10px;
+        }
+        h1{
+            color: whitesmoke;
+            font-size: 20px;
+            text-align: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="d1">
+        <h1>Input your Bike Info</h1>
+        <input type="text" placeholder="Brand" id="e"><br><br>
+        <input type="text" placeholder="Color" id="r"><br><br>
+        <input type="text" placeholder="Nameplate" id="t"><br><br>
+        <input type="text" placeholder="Speed" id="y"><br><br>
+        <br>
+        <button type="button" onclick="btn()"> click </button>
+    </div>
+    
+    
+    <div class="gt"> </div>
+    <script>
+        var x = [];
+ var txt = '';
+function btn(){
+    var e = document.getElementById('e').value;
+        var r = document.getElementById('r').value;
+        var t = document.getElementById('t').value;
+        var y = document.getElementById('y').value;
+        x.push({brand:e, color:r, nameplate:t, speed:y});
+        console.log(x);
+        class bike{
+            constructor(brand, color, nameplate, speed){
+                this.brand = brand;
+                this.color = color;
+                this.nameplate = nameplate;
+                this.speed = speed;
+            }
+        }
+        //const ronibike = new bike('Pulser', 'Red & Black', 'La-256254', 150);
+       // const tajbike = new bike('TVS', 'White & Black', 'La-488454', 125);
+       // const abirbike = new bike('FZs', 'Blue', 'La-526252', 150);
+
+       
+
+
+
+    
+      
+        
+          /*txt = `<div class="d1">
+
+
+
+            <p>
+                Brand Name: ${x[x.length-1].brand};
+            
+            </p>
+ 
+
+        <p>
+            Bike Color: ${x[x.length-1].color};
+            
+        </p>
+
+
+    <p>
+
+        Nameplate Number:${x[x.length-1].nameplate};
+
+       
+    </p>
+
+
+    <p>
+        Speed:${x[x.length-1].speed};
+    </p>
+</div>` */ 
+        document.querySelector('.gt').innerHTML += txt;
+        const hihi = document.querySelector('.gt');
+        const mdv = document.createElement('div');
+    mdv.classList.add('d1');
+    
+
+    const hdn = document.createElement('h1');
+    const hdnd = document.createTextNode('Input your Bike Info');
+    hdn.appendChild(hdnd);
+    mdv.appendChild(hdn);
+
+    /*const inp1 = document.createElement('h1');
+    const inptxt = document.createTextNode('dummy');
+    inp1.appendChild(inptxt);
+    mdv.appendChild(inp1);
+    const inp2 = document.createElement('input');
+    mdv.appendChild(inp2);
+    const inp3 = document.createElement('input');
+    mdv.appendChild(inp3);
+    const inp4 = document.createElement('input');
+    mdv.appendChild(inp4);
+    const btnn = document.createElement('button');
+    const btnd = document.createTextNode('Click');
+    btnn.appendChild(btnd);
+    mdv.appendChild(btnn);
+    btnn.style.margin = '10px 0px 0px 10px'*/
+
+    const brndtxt = document.createElement('p');
+    const brndtxtnd = document.createTextNode("Brand: " + x[x.length-1].brand);
+    brndtxt.appendChild(brndtxtnd);
+    mdv.appendChild(brndtxt);
+
+    const clrtxt = document.createElement('p');
+    const clrtxtnd = document.createTextNode('Color: ' + x[x.length-1].color);
+    clrtxt.appendChild(clrtxtnd);
+    mdv.appendChild(clrtxt);
+
+    const nmplttxt = document.createElement('p');
+    const nmplttxtnd = document.createTextNode('Name Plate: ' + x[x.length-1].nameplate);
+    nmplttxt.appendChild(nmplttxtnd);
+    mdv.appendChild(nmplttxt);
+
+    const spdtxt = document.createElement('p');
+    const spdtxtnd = document.createTextNode('Speed: ' + x[x.length-1].speed);
+    spdtxt.appendChild(spdtxtnd);
+    mdv.appendChild(spdtxt);
+
+    brndtxt.style.color = '#ffffff';
+    
+
+    
+        hihi.appendChild(mdv);
+        
+
+        
+}
+
+    
+    </script>
+</body>
+</html>
